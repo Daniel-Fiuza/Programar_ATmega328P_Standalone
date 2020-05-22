@@ -1,7 +1,8 @@
 # Tutorial Configuração do ATmega328P Standalone com USBAsp no Ubuntu 18.04
 ## Configuração de Hardware
 A imagem a seguir ilustra a configuração necessária para programar o ATmega328P standalone.
-![](/Imagens/Standalone_atmega328p.jpg)
+
+<img src="/Imagens/Standalone_atmega328p.jpg">
 
 Já a conexão do microcontrolador com o gravador USBasp deve ser realizada da seguinte forma:
 ![](/Imagens/conexão_USBasp_atmega328p.png)
@@ -85,7 +86,7 @@ avrdude -c usbasp -p m328p -P usb -b 19200 -u -U lfuse:w:0xf7:m
 ```
 Esse comando escreve no low fuse o byte 0xf7 imediatamente. O argumento *'-u'* impede que os fusíveis sejam programados incorretamente caso não esteja utilizando uma fonte externa, e sim, a tensão do programador USBasp. Agora, podemos gravar o código no dispositivo com o seguinte comando:
 ```
-avrdude -c usbasp -p m328p -P usb -b 19200 -U flash:w:Blink_pin_13.ino.with_bootloader.hex
+avrdude -c usbasp -p m328p -P usb -b 19200 -u -U flash:w:Blink_pin_13.ino.with_bootloader.hex
 ```
 Pronto! O código foi carregado e deve estar rodando no dispositivo.
 Saída esperada desse comando:
