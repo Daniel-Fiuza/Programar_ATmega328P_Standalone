@@ -52,11 +52,11 @@ Utilizando outro ATmega328P-PU (com a mesma configuração de hardware), porém 
 >  avrdude: warning: cannot set sck period. please check for usbasp firmware update.
 avrdude: AVR device initialized and ready to accept instructions
 
-Reading | ################################################## | 100% 0.00s
+> Reading | ################################################## | 100% 0.00s
 
-avrdude: Device signature = 0x1e950f (probably m328p)
+> avrdude: Device signature = 0x1e950f (probably m328p)
 
-avrdude: safemode: Fuses OK (E:FF, H:D9, L:F7)
+> avrdude: safemode: Fuses OK (E:FF, H:D9, L:F7)
 
 > avrdude done.  Thank you.
 
@@ -66,7 +66,7 @@ Todos os ATmega328P vem com a assinatura: **0x1E 0x95 0x0F**, por padrão (pág 
 A configuração padrão dos fusíveis no Atmega328P são: **LF:0x62 HF:0xD9 EF:0xFF**
 Ao utilizar um cristal oscilador externo (16 MHz), deve-se alterar os fusíveis para: **LF:0xF7 HF:0xD9 EF:0xFF**
 Caso necessite reprogramar os fusíveis pode-se utilizar a programação paralela (pág 245 - 27.6 Parallel Programming Parameters, Pin Mapping, and Commands e pág 252 - Figure 27-5. Programming the FUSES Waveforms)
-![Configurar Fusíveis de um ATmega328P](https://www.instructables.com/id/How-to-change-fuse-bits-of-AVR-Atmega328p-8bit-mic/)
+[Configurar Fusíveis de um ATmega328P](https://www.instructables.com/id/How-to-change-fuse-bits-of-AVR-Atmega328p-8bit-mic/)
 
 ### Configurando Fusível e Gravando Código no Microcontrolador
 Como informado anteriormente, deve-se alterar apenas o fusível LF, pois os demais permanecem iguais:
@@ -82,9 +82,9 @@ Saída esperada desse comando:
 > avrdude: warning: cannot set sck period. please check for usbasp firmware update.
 avrdude: AVR device initialized and ready to accept instructions
 
-Reading | ################################################## | 100% 0.01s
+> Reading | ################################################## | 100% 0.01s
 
-avrdude: Device signature = 0x1e950f (probably m328p)
+> avrdude: Device signature = 0x1e950f (probably m328p)
 avrdude: NOTE: "flash" memory has been specified, an erase cycle will be performed
          To disable this feature, specify the -D option.
 avrdude: erasing chip
@@ -93,21 +93,21 @@ avrdude: reading input file "Blink_pin_13.ino.with_bootloader.hex"
 avrdude: input file Blink_pin_13.ino.with_bootloader.hex auto detected as Intel Hex
 avrdude: writing flash (32768 bytes):
 
-Writing | ################################################## | 100% 0.60s
+> Writing | ################################################## | 100% 0.60s
 
-avrdude: 32768 bytes of flash written
+> avrdude: 32768 bytes of flash written
 avrdude: verifying flash memory against Blink_pin_13.ino.with_bootloader.hex:
 avrdude: load data flash data from input file Blink_pin_13.ino.with_bootloader.hex:
 avrdude: input file Blink_pin_13.ino.with_bootloader.hex auto detected as Intel Hex
 avrdude: input file Blink_pin_13.ino.with_bootloader.hex contains 32768 bytes
 avrdude: reading on-chip flash data:
 
-Reading | ################################################## | 100% 0.52s
+> Reading | ################################################## | 100% 0.52s
 
-avrdude: verifying ...
+> avrdude: verifying ...
 avrdude: 32768 bytes of flash verified
 
 > avrdude done.  Thank you.
 
 ## Referência
-![Gravando Arquivo HEX com avrdude](https://www.elecrom.com/avrdude-tutorial-burning-hex-files-using-usbasp-and-avrdude/)
+[Gravando Arquivo HEX com avrdude](https://www.elecrom.com/avrdude-tutorial-burning-hex-files-using-usbasp-and-avrdude/)
