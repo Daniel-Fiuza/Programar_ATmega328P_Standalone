@@ -1,5 +1,11 @@
 # Tutorial Configuração do ATmega328P Standalone com USBAsp no Ubuntu 18.04
-## Configurando Porta Serial
+## Configuração de Hardware
+A imagem a seguir ilustra a configuração necessária para programar o ATmega328P standalone.
+![](/Imagens/Standalone_atmega328p.jpg)
+
+Já a conexão do microcontrolador com o gravador USBasp deve ser realizada da seguinte forma:
+![](/Imagens/conexão_USBasp_atmega328p.png)
+## Configurando Porta Serial no Ubuntu 18.04
 Primeiro verifique porta serial:
 ```
 sudo lsusb
@@ -18,10 +24,11 @@ ls -al /dev/bus/usb/001/022
 ```
 
 ## Usando AVRDUDE
-Para verificar dispostivo:
+Para verificar informaçes do dispostivo:
 ```
 avrdude -c usbasp -p m328p -F -P usb -v
 ```
+Para mais comandos do avrdude veja o [manual](/Documentos/Manual_avrdude.pdf).
 ### Resultado de um Microcontrolador Danificado
 Devido algum problema no dispositivo o avrdude não consegue verificar a assinatura padrão do chip e a seguinte mensagem aparece:
 
@@ -61,7 +68,7 @@ avrdude: AVR device initialized and ready to accept instructions
 > avrdude done.  Thank you.
 
 ### Informações sobre Fuses do ATMEGA328P
-Você pode verificar no datasheet (pág 242 - Fuse Bits).
+Você pode verificar no [datasheet](/Documentos/Datasheet_ATmega328P.pdf) (pág 242 - Fuse Bits).
 
 Todos os ATmega328P vem com a assinatura: **0x1E 0x95 0x0F**, por padrão (pág 244).
 
@@ -114,4 +121,5 @@ avrdude: 32768 bytes of flash verified
 
 ## Referências
 [Gravando Arquivo HEX com avrdude](https://www.elecrom.com/avrdude-tutorial-burning-hex-files-using-usbasp-and-avrdude/)
+
 [Configurar Fusíveis de um ATmega328P](https://www.instructables.com/id/How-to-change-fuse-bits-of-AVR-Atmega328p-8bit-mic/)
