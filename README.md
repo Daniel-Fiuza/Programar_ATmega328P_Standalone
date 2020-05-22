@@ -62,11 +62,14 @@ avrdude: AVR device initialized and ready to accept instructions
 
 ### Informações sobre Fuses do ATMEGA328P
 Você pode verificar no datasheet (pág 242 - Fuse Bits).
+
 Todos os ATmega328P vem com a assinatura: **0x1E 0x95 0x0F**, por padrão (pág 244).
-A configuração padrão dos fusíveis no Atmega328P são: **LF:0x62 HF:0xD9 EF:0xFF**
-Ao utilizar um cristal oscilador externo (16 MHz), deve-se alterar os fusíveis para: **LF:0xF7 HF:0xD9 EF:0xFF**
-Caso necessite reprogramar os fusíveis pode-se utilizar a programação paralela (pág 245 - 27.6 Parallel Programming Parameters, Pin Mapping, and Commands e pág 252 - Figure 27-5. Programming the FUSES Waveforms)
-[Configurar Fusíveis de um ATmega328P](https://www.instructables.com/id/How-to-change-fuse-bits-of-AVR-Atmega328p-8bit-mic/)
+
+A configuração padrão dos fusíveis no Atmega328P são: **LF:0x62 HF:0xD9 EF:0xFF**.
+
+Ao utilizar um cristal oscilador externo (16 MHz), deve-se alterar os fusíveis para: **LF:0xF7 HF:0xD9 EF:0xFF**.
+
+Caso necessite reprogramar os fusíveis pode-se utilizar a programação paralela (pág 245 - 27.6 Parallel Programming Parameters, Pin Mapping, and Commands e pág 252 - Figure 27-5. Programming the FUSES Waveforms).
 
 ### Configurando Fusível e Gravando Código no Microcontrolador
 Como informado anteriormente, deve-se alterar apenas o fusível LF, pois os demais permanecem iguais:
@@ -109,5 +112,6 @@ avrdude: 32768 bytes of flash verified
 
 > avrdude done.  Thank you.
 
-## Referência
+## Referências
 [Gravando Arquivo HEX com avrdude](https://www.elecrom.com/avrdude-tutorial-burning-hex-files-using-usbasp-and-avrdude/)
+[Configurar Fusíveis de um ATmega328P](https://www.instructables.com/id/How-to-change-fuse-bits-of-AVR-Atmega328p-8bit-mic/)
